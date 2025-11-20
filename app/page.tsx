@@ -154,10 +154,10 @@ export default function Page() {
         <nav style={styles.nav}>
           <div style={styles.navContent} className="responsive-nav-content">
             <div style={styles.logo}>
-              <div style={styles.logoIcon}>🎙️</div>
+              <div style={styles.logoIcon}>🤖</div>
               <span style={styles.logoText}>Billionets A.I</span>
             </div>
-            <button onClick={startCall} style={styles.navButton}>Try Demo</button>
+            <button onClick={() => window.location.href = '/demo'} style={styles.navButton}>Try Demo</button>
           </div>
         </nav>
 
@@ -172,8 +172,8 @@ export default function Page() {
               Powered by cutting-edge voice technology for seamless human-AI interaction.
             </p>
             <div style={styles.heroButtons}>
-              <button onClick={startCall} disabled={isBusy} style={styles.ctaButton}>
-                {isBusy ? 'Starting...' : 'Try Live Demo'}
+              <button onClick={() => window.location.href = '/demo'} style={styles.ctaButton}>
+                Try Live Demo
               </button>
               <button onClick={() => window.location.href = '/contact'} style={styles.ctaSecondaryButton}>
                 Contact Sales
@@ -335,8 +335,8 @@ export default function Page() {
             Start your free demo today and see how Billionets A.I can transform your business.
           </p>
           <div style={styles.ctaButtons}>
-            <button onClick={startCall} disabled={isBusy} style={styles.ctaButton}>
-              {isBusy ? 'Starting...' : 'Try Live Demo Now'}
+            <button onClick={() => window.location.href = '/demo'} style={styles.ctaButton}>
+              Try Live Demo Now
             </button>
             <button onClick={() => window.location.href = '/contact'} style={styles.ctaSecondaryButton}>
               Get in Touch
