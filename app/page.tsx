@@ -157,10 +157,7 @@ export default function Page() {
               <div style={styles.logoIcon}>🎙️</div>
               <span style={styles.logoText}>Billionets A.I</span>
             </div>
-            <div style={styles.navButtons}>
-              <button onClick={() => window.location.href = '/contact'} style={styles.navContactButton}>Contact Us</button>
-              <button onClick={startCall} style={styles.navButton}>Try Demo</button>
-            </div>
+            <button onClick={startCall} style={styles.navButton}>Try Demo</button>
           </div>
         </nav>
 
@@ -495,22 +492,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  },
-  navButtons: {
-    display: 'flex',
-    gap: '1rem',
-    alignItems: 'center',
-  },
-  navContactButton: {
-    padding: '0.625rem 1.5rem',
-    fontSize: '1rem',
-    border: 'none',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    backgroundColor: 'transparent',
-    color: '#667eea',
-    fontWeight: '600',
-    transition: 'all 0.3s',
   },
   navButton: {
     padding: '0.625rem 1.5rem',
