@@ -61,6 +61,30 @@ export default function ContactPage() {
 
   return (
     <div style={styles.container}>
+      <style jsx global>{`
+        body {
+          overflow-x: hidden;
+        }
+        @media (max-width: 950px) {
+          .responsive-contact-container {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .responsive-contact-section {
+            padding: 3rem 1rem !important;
+          }
+          .responsive-contact-hero {
+            padding: 3rem 1rem !important;
+          }
+          .responsive-contact-form {
+            padding: 1.5rem !important;
+          }
+          .responsive-contact-title {
+            font-size: 2rem !important;
+          }
+        }
+      `}</style>
       {/* Navigation */}
       <nav style={styles.nav}>
         <div style={styles.navContent}>

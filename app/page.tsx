@@ -152,7 +152,7 @@ export default function Page() {
       <div style={styles.landingContainer}>
         {/* Navigation */}
         <nav style={styles.nav}>
-          <div style={styles.navContent}>
+          <div style={styles.navContent} className="responsive-nav-content">
             <div style={styles.logo}>
               <div style={styles.logoIcon}>🎙️</div>
               <span style={styles.logoText}>Billionets A.I</span>
@@ -165,9 +165,9 @@ export default function Page() {
         </nav>
 
         {/* Hero Section */}
-        <section style={styles.hero}>
+        <section style={styles.hero} className="responsive-hero">
           <div style={styles.heroContent}>
-            <h1 style={styles.heroTitle}>
+            <h1 style={styles.heroTitle} className="responsive-hero-title">
               Talk to AI Like Never Before
             </h1>
             <p style={styles.heroSubtitle}>
@@ -410,6 +410,31 @@ export default function Page() {
             50% {
               transform: scale(1.05);
               box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
+            }
+          }
+        `}</style>
+        <style jsx global>{`
+          body {
+            overflow-x: hidden;
+          }
+          @media (max-width: 768px) {
+            .responsive-hero {
+              padding: 4rem 1rem !important;
+            }
+            .responsive-section {
+              padding: 3rem 1rem !important;
+            }
+            .responsive-hero-title {
+              font-size: 2.5rem !important;
+            }
+            .responsive-demo-container {
+              padding: 1rem !important;
+            }
+            .responsive-demo-main {
+              padding: 1.5rem !important;
+            }
+            .responsive-nav-content {
+              padding: 1rem !important;
             }
           }
         `}</style>
