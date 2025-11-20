@@ -64,7 +64,7 @@ export default function ContactPage() {
       {/* Navigation */}
       <nav style={styles.nav}>
         <div style={styles.navContent}>
-          <div style={styles.logo} onClick={() => router.push('/')} style={{...styles.logo, cursor: 'pointer'}}>
+          <div onClick={() => router.push('/')} style={{...styles.logo, cursor: 'pointer'}}>
             <div style={styles.logoIcon}>🎙️</div>
             <span style={styles.logoText}>Billionets A.I</span>
           </div>
