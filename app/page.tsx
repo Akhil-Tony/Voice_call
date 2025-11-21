@@ -371,7 +371,11 @@ export default function Page() {
             ...styles.micContainer,
             animation: (callStatus === 'listening' || callStatus === 'speaking') ? 'pulse 1.5s ease-in-out infinite' : 'none',
           }}>
-            <div style={styles.micIcon}>🤖</div>
+            <img 
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" 
+              alt="AI Agent" 
+              style={styles.agentImage} 
+            />
           </div>
           <p style={styles.micStatus}>
             {callStatus === 'listening' && '🟢 Listening...'}
@@ -842,6 +846,12 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
     justifyContent: 'center',
     border: '4px solid #667eea',
+    overflow: 'hidden',
+  },
+  agentImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
   micIcon: {
     fontSize: '4rem',
