@@ -19,13 +19,20 @@ const CreateAgentPage = () => {
     setIsSubmitting(true);
     setSubmitMessage('Submitting...');
 
+    // Ensure URL starts with https://
+    let urlToSubmit = customAgentUrl.trim();
+    // Remove existing protocol if user pasted it
+    urlToSubmit = urlToSubmit.replace(/^https?:\/\//, '');
+    // Add https:// prefix
+    urlToSubmit = `https://${urlToSubmit}`;
+
     try {
       const response = await fetch('https://n8n-6421994137235212.kloudbeansite.com/webhook/ultravox_inbound_custom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url: customAgentUrl }),
+        body: JSON.stringify({ url: urlToSubmit }),
       });
 
       if (response.ok) {
@@ -88,13 +95,27 @@ const CreateAgentPage = () => {
       width: '100%',
       gap: '1rem',
     },
-    input: {
-      padding: '1rem',
+    inputWrapper: {
+      display: 'flex',
+      alignItems: 'center',
+      padding: '0 1rem',
       borderRadius: '8px',
       border: '1px solid rgba(255, 255, 255, 0.2)',
       backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    },
+    prefix: {
+      color: '#9ca3af',
+      fontSize: '1rem',
+      userSelect: 'none',
+    },
+    input: {
+      flex: 1,
+      padding: '1rem 0 1rem 0.25rem',
+      border: 'none',
+      backgroundColor: 'transparent',
       color: 'white',
       fontSize: '1rem',
+      outline: 'none',
     },
     button: {
       padding: '1rem',
@@ -120,14 +141,17 @@ const CreateAgentPage = () => {
         <h1 style={styles.title}>Create Your Own Agent</h1>
         <p style={styles.subtitle}>Provide your website URL, and our AI will learn its content to build a knowledgeable agent for you.</p>
         <form onSubmit={handleCustomAgentSubmit} style={styles.form}>
-          <input
-            type="url"
-            value={customAgentUrl}
-            onChange={(e) => setCustomAgentUrl(e.target.value)}
-            placeholder="https://your-website.com"
-            style={styles.input}
-            required
-          />
+          <div style={styles.inputWrapper}>
+            <span style={styles.prefix}>https://</span>
+            <input
+              type="text"
+              value={customAgentUrl}
+              onChange={(e) => setCustomAgentUrl(e.target.value)}
+              placeholder="your-website.com"
+              style={styles.input}
+              required
+            />
+          </div>
           <button type="submit" style={styles.button} disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Create Agent'}
           </button>
