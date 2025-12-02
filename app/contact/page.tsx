@@ -30,7 +30,7 @@ export default function ContactPage() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://n8n-6421994137235212.kloudbeansite.com/webhook/contactbnform', {
+      const response = await fetch('https://n8n-642200223.kloudbeansite.com/webhook/contactbnform', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

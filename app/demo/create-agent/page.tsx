@@ -17,7 +17,7 @@ const CreateAgentPage = () => {
       return;
     }
     setIsSubmitting(true);
-    setSubmitMessage('Submitting...');
+    setSubmitMessage('Creating Agent...');
 
     // Ensure URL starts with https://
     let urlToSubmit = customAgentUrl.trim();
@@ -27,7 +27,7 @@ const CreateAgentPage = () => {
     urlToSubmit = `https://${urlToSubmit}`;
 
     try {
-      const response = await fetch('https://n8n-6421994137235212.kloudbeansite.com/webhook/ultravox_inbound_custom', {
+      const response = await fetch('https://n8n-642200223.kloudbeansite.com/webhook/ultravox_inbound_custom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

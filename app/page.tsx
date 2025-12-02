@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 // The webhook URL to get a join token for Ultravox
-const WEBHOOK_URL = 'https://n8n-6421994137235212.kloudbeansite.com/webhook/ultravox_inbound';
+const WEBHOOK_URL = 'https://n8n-642200223.kloudbeansite.com/webhook/ultravox_inbound';
 
 export default function Page() {
   const [showDemo, setShowDemo] = useState(false);

@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-const WEBHOOK_URL = 'https://n8n-6421994137235212.kloudbeansite.com/webhook/ultravox_inbound';
+const WEBHOOK_URL = 'https://n8n-642200223.kloudbeansite.com/webhook/ultravox_inbound';
 
 const TryPageClient = () => {
   const [callStatus, setCallStatus] = useState('idle');
